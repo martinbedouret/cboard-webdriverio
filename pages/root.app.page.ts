@@ -125,6 +125,9 @@ class RootAppPage extends Page {
   clearCommunicatorBarTiles() {
     return this.clear.click();
   }
+  clickOnSetttings() {
+    return this.settings.click();
+  }
 }
 
 export default new RootAppPage();
