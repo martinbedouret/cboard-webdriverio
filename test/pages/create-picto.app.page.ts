@@ -1,7 +1,8 @@
 import { expect } from 'chai';
-import Page from 'pages/Page';
-import RootAppPage from 'pages/root.app.page';
-import WelcomeAppPage from 'pages/welcome.app.page';
+
+import Page from 'test/pages/Page';
+import RootAppPage from 'test/pages/root.app.page';
+import WelcomeAppPage from 'test/pages/welcome.app.page';
 
 class CreatePictoAppPage extends Page {
   /**
@@ -16,15 +17,12 @@ class CreatePictoAppPage extends Page {
   get button() {
     return $('//input[@value="button"]');
   }
-
   get nameInput() {
     return $('//*[@name="name"]');
   }
-
   get labelInput() {
     return $('#label');
   }
-
   get vocalizationInput() {
     return $('#vocalization');
   }
@@ -34,7 +32,7 @@ class CreatePictoAppPage extends Page {
   /**
    * define or overwrite page methods
    */
-  public open() {
+  open() {
     super.open('https://app.cboard.io/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
     RootAppPage.unblockSettings();
@@ -45,6 +43,7 @@ class CreatePictoAppPage extends Page {
   reload() {
     super.reload();
   }
+
   createPicto(label, vocalization, type = 'button') {
     this.labelInput.setValue(label);
     this.vocalizationInput.setValue(vocalization);

@@ -1,30 +1,24 @@
-import Page from 'pages/Page';
+import Page from 'test/pages/Page';
 
 class HomePage extends Page {
   /**
    * define elements
    **/
-
   get startCboard() {
     return browser.$('=Start Cboard');
   }
-
   get blog() {
     return browser.$('=BLOG');
   }
-
   get about() {
     return browser.$('=ABOUT');
   }
-
   get contact() {
     return browser.$('=CONTACT');
   }
-
   get help() {
     return browser.$('=HELP');
   }
-
   get github() {
     return browser.$('=GITHUB');
   }
@@ -32,9 +26,10 @@ class HomePage extends Page {
   /**
    * define or overwrite page methods
    */
-  public open() {
+  open() {
     super.open('https://www.cboard.io/');
   }
+
   clickOnStartCboard() {
     this.startCboard.click();
   }

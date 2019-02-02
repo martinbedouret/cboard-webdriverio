@@ -1,5 +1,15 @@
 export default class Page {
-  public open(path) {
+  /**
+   * define elements
+   */
+  get h1() {
+    return $('h1').getText();
+  }
+
+  /**
+   * define or overwrite page methods
+   */
+  open(path) {
     browser.url(path);
   }
 
@@ -11,7 +21,6 @@ export default class Page {
     if (reload) {
       this.reload();
     }
-
     browser.waitUntil(
       () => {
         return (

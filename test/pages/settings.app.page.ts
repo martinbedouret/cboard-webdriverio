@@ -1,7 +1,8 @@
 import { expect } from 'chai';
-import Page from 'pages/Page';
-import RootAppPage from 'pages/root.app.page';
-import WelcomeAppPage from 'pages/welcome.app.page';
+
+import Page from 'test/pages/Page';
+import RootAppPage from 'test/pages/root.app.page';
+import WelcomeAppPage from 'test/pages/welcome.app.page';
 
 class SettingsAppPage extends Page {
   /**
@@ -29,7 +30,7 @@ class SettingsAppPage extends Page {
   /**
    * define or overwrite page methods
    */
-  public open() {
+  open() {
     super.open('https://app.cboard.io/');
     WelcomeAppPage.loginUser('anything@cboard.io', '1122');
     RootAppPage.unblockSettings();
@@ -44,9 +45,11 @@ class SettingsAppPage extends Page {
   clickOnExport() {
     return this.export.click();
   }
+
   clickOnImport() {
     return this.import.click();
   }
+
   exportBoard(format = 'Cboard') {
     this.exportButton.click();
     this.exportFormatMenu.selectByVisibleText(format);

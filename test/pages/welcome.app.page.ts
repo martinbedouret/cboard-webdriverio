@@ -1,6 +1,7 @@
 import { expect } from 'chai';
-import Page from 'pages/Page';
-import RootAppPage from 'pages/root.app.page';
+
+import Page from 'test/pages/Page';
+import RootAppPage from 'test/pages/root.app.page';
 
 class WelcomeAppPage extends Page {
   /**
@@ -9,54 +10,42 @@ class WelcomeAppPage extends Page {
   get login() {
     return $('button=Login');
   }
-
   get signup() {
     return $('button=Sign Up');
   }
-
   get signmeup() {
     return $('button=Sign me up');
   }
-
   get skip() {
     return $('button=Skip for now');
   }
-
   get about() {
     return $('=ABOUT');
   }
-
   get contact() {
     return $('=CONTACT');
   }
-
   get help() {
     return $('=HELP');
   }
   get github() {
     return $('=GITHUB');
   }
-
   get nameInput() {
     return $('//*[@name="name"]');
   }
-
   get usernameInput() {
     return $('//*[@name="email"]');
   }
-
   get passwordInput() {
     return $('//*[@name="password"]');
   }
-
   get passwordConfirmInput() {
     return $('//*[@name="passwordConfirm"]');
   }
-
   get loginButton() {
     return $('//button[@type="submit"]');
   }
-
   get signupConfirmMessage() {
     return $('div.SignUp__status.SignUp__status--success');
   }
@@ -64,7 +53,7 @@ class WelcomeAppPage extends Page {
   /**
    * define or overwrite page methods
    */
-  public open() {
+  open() {
     super.open('https://app.cboard.io/');
   }
 
